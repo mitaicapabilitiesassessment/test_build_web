@@ -1,0 +1,1607 @@
+/* ==========================================================================
+   TRỊNH HOÀI ĐỨC - PERSONAL PORTFOLIO WEBSITE
+   Inspired by Salekit Theme (677b4e9784b127da97021bf0)
+   Color System:
+   - Royal Blue: #0e47c0 (rgb(14, 71, 192))
+   - Primary Gradient: linear-gradient(180deg, rgb(20, 136, 204), rgb(43, 50, 178))
+   - Vivid Yellow Accent: #ffde59 (rgb(255, 222, 89))
+   - Neutral Grey Card Band: #f1f3f4 (rgb(241, 243, 244))
+   - Card Shadow: 0px 0px 10px 0px rgb(217, 217, 217)
+   - Footer: #000000
+   ========================================================================== */
+
+:root {
+  --royal-blue: #0e47c0;
+  --royal-blue-dark: #09318a;
+  --btn-gradient: linear-gradient(rgb(20, 136, 204), rgb(43, 50, 178));
+  --btn-gradient-hover: linear-gradient(rgb(25, 152, 226), rgb(34, 41, 155));
+  --accent-yellow: #ffde59;
+  --accent-yellow-hover: #ffd426;
+  --band-grey: #f1f3f4;
+  --text-black: #000000;
+  --text-dark: #111827;
+  --text-body: #4b5563;
+  --text-muted: #6b7280;
+  --card-shadow: 0px 0px 10px 0px rgb(217, 217, 217);
+  --card-shadow-hover: 0px 12px 28px 0px rgba(14, 71, 192, 0.16);
+  --container-width: 1200px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  color: var(--text-black);
+  background-color: #ffffff;
+}
+
+body {
+  overflow-x: hidden;
+  line-height: 1.6;
+  background-color: #ffffff;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.25s ease;
+}
+
+ul {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+.sp_container {
+  max-width: var(--container-width);
+  margin: 0 auto;
+  padding: 0 16px;
+  position: relative;
+}
+
+/* ==========================================================================
+   REUSABLE BUTTONS & TAGS (Exact Salekit Theme Dimensions & Styles)
+   ========================================================================== */
+.btn-pill-gradient {
+  background: var(--btn-gradient);
+  color: #ffffff;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  min-width: 234px;
+  height: 50px;
+  padding: 0 28px;
+  border-radius: 25px;
+  border: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  cursor: pointer;
+  box-shadow: 0 8px 20px rgba(20, 136, 204, 0.28);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+}
+
+.btn-pill-gradient:hover {
+  background: var(--btn-gradient-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 26px rgba(20, 136, 204, 0.38);
+}
+
+.btn-pill-outline {
+  background: rgba(255, 255, 255, 0.92);
+  color: var(--royal-blue);
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 15px;
+  height: 50px;
+  padding: 0 24px;
+  border-radius: 25px;
+  border: 2px solid var(--royal-blue);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.btn-pill-outline:hover {
+  background: var(--royal-blue);
+  color: #ffffff;
+  transform: translateY(-2px);
+}
+
+.btn-pill-yellow {
+  background-color: var(--accent-yellow);
+  color: #000000;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 18px;
+  min-width: 280px;
+  height: 50px;
+  padding: 0 32px;
+  border-radius: 25px;
+  border: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  cursor: pointer;
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.18);
+  transition: transform 0.25s ease, background-color 0.25s ease;
+  text-transform: uppercase;
+}
+
+.btn-pill-yellow:hover {
+  background-color: var(--accent-yellow-hover);
+  transform: translateY(-2px) scale(1.02);
+}
+
+@keyframes pulseSoft {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.03); }
+}
+
+.animate-pulse-btn {
+  animation: pulseSoft 2.8s infinite ease-in-out;
+}
+
+.section-tag {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--royal-blue);
+  margin-bottom: 10px;
+  display: inline-block;
+}
+
+.section-title {
+  font-size: 35px;
+  font-weight: 700;
+  color: var(--text-black);
+  line-height: 1.28;
+}
+
+/* ==========================================================================
+   SECTION 1: NAVIGATION HEADER (Height: 110px)
+   ========================================================================== */
+#SECTION1 {
+  min-height: 100px;
+  background: rgba(255, 255, 255, 0.96);
+  backdrop-filter: blur(10px);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  border-bottom: 1px solid rgba(14, 71, 192, 0.08);
+  display: flex;
+  align-items: center;
+}
+
+.header-inner {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 14px 16px;
+}
+
+.brand-logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.brand-monogram {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  background: var(--btn-gradient);
+  color: #ffffff;
+  font-weight: 800;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  letter-spacing: 0.5px;
+  box-shadow: 0 4px 12px rgba(14, 71, 192, 0.25);
+  flex-shrink: 0;
+}
+
+.brand-text-wrap {
+  display: flex;
+  flex-direction: column;
+}
+
+.brand-name {
+  font-size: 20px;
+  font-weight: 800;
+  color: var(--royal-blue);
+  letter-spacing: 0.5px;
+  line-height: 1.15;
+}
+
+.brand-role {
+  font-size: 11px;
+  font-weight: 700;
+  color: #374151;
+  letter-spacing: 1.1px;
+  text-transform: uppercase;
+  margin-top: 2px;
+}
+
+.nav-menu {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+
+.nav-link {
+  font-size: 17px;
+  font-weight: 600;
+  color: #000000;
+  position: relative;
+  padding: 6px 2px;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 2.5px;
+  background: var(--royal-blue);
+  transition: width 0.25s ease;
+}
+
+.nav-link:hover {
+  color: var(--royal-blue);
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.lang-switch {
+  display: inline-flex;
+  background: var(--band-grey);
+  border-radius: 20px;
+  padding: 3px;
+  border: 1px solid #e5e7eb;
+}
+
+.lang-btn {
+  border: none;
+  background: transparent;
+  padding: 5px 11px;
+  border-radius: 16px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  color: #4b5563;
+  transition: all 0.2s ease;
+}
+
+.lang-btn.active {
+  background: var(--royal-blue);
+  color: #ffffff;
+}
+
+.mobile-menu-btn {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 24px;
+  color: var(--royal-blue);
+  cursor: pointer;
+}
+
+/* ==========================================================================
+   SECTION 2: HERO SECTION (Height: ~610px, bg-section-01.jpg)
+   ========================================================================== */
+#SECTION2 {
+  min-height: 610px;
+  position: relative;
+  background-image: url('assets/bg-section-01.jpg');
+  background-position: center top;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  padding: 56px 0 64px;
+  overflow: hidden;
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  align-items: center;
+  gap: 40px;
+  width: 100%;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  background: rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(6px);
+  padding: 28px 32px 28px 0;
+  border-radius: 20px;
+}
+
+.hero-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(14, 71, 192, 0.09);
+  color: var(--royal-blue);
+  font-size: 12px;
+  font-weight: 700;
+  padding: 7px 14px;
+  border-radius: 20px;
+  margin-bottom: 18px;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+.hero-title {
+  font-size: 46px;
+  line-height: 1.18;
+  margin-bottom: 18px;
+}
+
+.hero-title .line-black {
+  color: #000000;
+  font-size: 38px;
+  font-weight: 600;
+  display: block;
+  margin-bottom: 4px;
+}
+
+.hero-title .line-blue {
+  color: var(--royal-blue);
+  font-weight: 800;
+  display: block;
+}
+
+.hero-subtitle {
+  font-size: 17px;
+  color: #374151;
+  font-weight: 400;
+  line-height: 1.65;
+  margin-bottom: 24px;
+  max-width: 580px;
+}
+
+.hero-contact-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-bottom: 28px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #1f2937;
+}
+
+.hero-contact-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  background: #f8fafc;
+  padding: 6px 13px;
+  border-radius: 8px;
+  border: 1px solid #e2e8f0;
+}
+
+.hero-contact-item i {
+  color: var(--royal-blue);
+}
+
+.hero-cta-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  align-items: center;
+}
+
+/* Right Column Portrait Card inside Hero */
+.hero-visual-wrap {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-portrait-card {
+  position: relative;
+  width: 340px;
+  height: 430px;
+  border-radius: 170px 170px 28px 28px;
+  background: linear-gradient(155deg, #ffffff 0%, #eef4ff 55%, #dbeafe 100%);
+  padding: 12px;
+  box-shadow: 0 22px 50px rgba(14, 71, 192, 0.25);
+  border: 4px solid #ffffff;
+}
+
+.hero-portrait-inner {
+  width: 100%;
+  height: 100%;
+  border-radius: 160px 160px 20px 20px;
+  overflow: hidden;
+  background: radial-gradient(circle at 50% 25%, #ffffff 0%, #e0ecff 100%);
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  position: relative;
+}
+
+.hero-portrait-inner img {
+  width: 96%;
+  height: 96%;
+  object-fit: cover;
+  object-position: top center;
+  transition: transform 0.4s ease;
+}
+
+.hero-portrait-card:hover .hero-portrait-inner img {
+  transform: scale(1.03);
+}
+
+/* Floating Metric Badges on Hero Portrait */
+.floating-badge {
+  position: absolute;
+  background: #ffffff;
+  border-radius: 14px;
+  padding: 10px 16px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.14);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  z-index: 3;
+  border: 1px solid rgba(14, 71, 192, 0.12);
+}
+
+.floating-badge .badge-icon {
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  background: var(--royal-blue);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.floating-badge.badge-yellow .badge-icon {
+  background: var(--accent-yellow);
+  color: #000000;
+}
+
+.floating-badge .badge-text strong {
+  display: block;
+  font-size: 16px;
+  font-weight: 800;
+  color: #000000;
+  line-height: 1.15;
+}
+
+.floating-badge .badge-text span {
+  font-size: 11.5px;
+  font-weight: 600;
+  color: #4b5563;
+}
+
+.badge-top-left {
+  top: 28px;
+  left: -36px;
+}
+
+.badge-bottom-right {
+  bottom: 34px;
+  right: -32px;
+}
+
+.badge-bottom-left {
+  bottom: -16px;
+  left: 20px;
+}
+
+/* ==========================================================================
+   SECTION 3: QUY TRÌNH / PHƯƠNG PHÁP CỐT LÕI (3-Step Horizontal Process)
+   Matches #SECTION3: 75x75px Royal Blue Circular Number Badges
+   ========================================================================== */
+#SECTION3 {
+  padding: 76px 0 68px;
+  background: #ffffff;
+}
+
+.section-header-center {
+  text-align: center;
+  max-width: 780px;
+  margin: 0 auto 54px;
+}
+
+.process-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 42px;
+}
+
+.process-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 20px 18px;
+  border-radius: 14px;
+  transition: transform 0.3s ease;
+}
+
+.process-card:hover {
+  transform: translateY(-6px);
+}
+
+.process-circle {
+  width: 75px;
+  height: 75px;
+  border-radius: 55px;
+  background-color: var(--royal-blue);
+  border: 1px solid rgb(174, 174, 174);
+  color: #ffffff;
+  font-size: 32px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 24px;
+  box-shadow: 0 8px 20px rgba(14, 71, 192, 0.25);
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.process-card:hover .process-circle {
+  background-color: #1488cc;
+  transform: scale(1.06);
+}
+
+.process-step-title {
+  font-size: 22px;
+  font-weight: 700;
+  color: #000000;
+  margin-bottom: 12px;
+}
+
+.process-step-desc {
+  font-size: 16px;
+  color: #4b5563;
+  line-height: 1.6;
+}
+
+/* ==========================================================================
+   SECTION 4: VỀ CHÚNG TÔI / VỀ BẢN THÂN TÔI
+   Matches #SECTION4: 3-Column Layout (Left Copy + Center bg-top.png + Right 3 Pillars)
+   ========================================================================== */
+#SECTION4 {
+  padding: 76px 0;
+  background: #fafbfc;
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr 0.95fr;
+  gap: 36px;
+  align-items: center;
+}
+
+.about-left .section-title {
+  margin-bottom: 20px;
+}
+
+.about-desc {
+  font-size: 16px;
+  color: #374151;
+  line-height: 1.7;
+  margin-bottom: 16px;
+}
+
+.about-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 28px;
+}
+
+.about-tag-chip {
+  background: #ffffff;
+  border: 1px solid #d1d5db;
+  border-radius: 20px;
+  padding: 5px 13px;
+  font-size: 12.5px;
+  font-weight: 600;
+  color: var(--royal-blue);
+}
+
+.about-center {
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+.about-organic-img {
+  width: 100%;
+  max-width: 419px;
+  height: 434px;
+  background-image: url('assets/bg-top.png');
+  background-position: center top;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+.about-overlay-stat {
+  position: absolute;
+  bottom: 24px;
+  left: 24px;
+  right: 24px;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(6px);
+  padding: 14px 18px;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+  display: flex;
+  justify-content: space-around;
+  text-align: center;
+}
+
+.about-overlay-stat div strong {
+  display: block;
+  font-size: 20px;
+  font-weight: 800;
+  color: var(--royal-blue);
+}
+
+.about-overlay-stat div span {
+  font-size: 11px;
+  font-weight: 600;
+  color: #374151;
+}
+
+.about-right {
+  display: flex;
+  flex-direction: column;
+  gap: 26px;
+}
+
+.pillar-item h4 {
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--royal-blue);
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.pillar-item p {
+  font-size: 15.5px;
+  color: #4b5563;
+  line-height: 1.6;
+}
+
+/* ==========================================================================
+   SECTION 5: DỊCH VỤ / NĂNG LỰC CHUYÊN MÔN CỐT LÕI
+   Matches #SECTION5: Top 2-Col (Title + Bullet List) & Bottom 3 Oval Capsules
+   ========================================================================== */
+#SECTION5 {
+  padding: 82px 0;
+  background: #ffffff;
+}
+
+.services-top-grid {
+  display: grid;
+  grid-template-columns: 0.95fr 1.05fr;
+  gap: 44px;
+  align-items: start;
+}
+
+.capability-checklist {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px 24px;
+}
+
+.capability-check-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  background: #f8fafc;
+  padding: 14px 16px;
+  border-radius: 10px;
+  border-left: 4px solid var(--royal-blue);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.03);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.capability-check-item:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--card-shadow);
+}
+
+.capability-check-item i {
+  color: var(--royal-blue);
+  font-size: 18px;
+  margin-top: 3px;
+  flex-shrink: 0;
+}
+
+.capability-check-item div strong {
+  display: block;
+  font-size: 15px;
+  font-weight: 700;
+  color: #000000;
+  margin-bottom: 3px;
+}
+
+.capability-check-item div span {
+  font-size: 13.5px;
+  color: #4b5563;
+  line-height: 1.45;
+  display: block;
+}
+
+/* 3 Oval Capsule Cards (Exact 241x245px border-radius: 139px from #BOX4/#BOX6/#BOX8) */
+.capsules-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 36px;
+  justify-items: center;
+}
+
+.capsule-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  max-width: 320px;
+}
+
+.capsule-outer {
+  width: 241px;
+  height: 245px;
+  border-radius: 139px;
+  background-color: #ffffff;
+  border: 1px solid rgb(174, 174, 174);
+  box-shadow: var(--card-shadow);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 22px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+}
+
+.capsule-card:hover .capsule-outer {
+  transform: translateY(-6px);
+  box-shadow: var(--card-shadow-hover);
+  border-color: var(--royal-blue);
+}
+
+.capsule-inner {
+  width: 223.6px;
+  height: 231.2px;
+  border-radius: 139px;
+  border: 1px solid rgb(174, 174, 174);
+  background-position: center top;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  overflow: hidden;
+}
+
+.capsule-inner::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(14, 71, 192, 0.05) 40%, rgba(14, 71, 192, 0.72) 100%);
+}
+
+.capsule-badge-overlay {
+  position: absolute;
+  bottom: 16px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+  background: var(--accent-yellow);
+  color: #000000;
+  font-size: 11.5px;
+  font-weight: 800;
+  padding: 4px 12px;
+  border-radius: 12px;
+  white-space: nowrap;
+}
+
+.capsule-title {
+  font-size: 21px;
+  font-weight: 700;
+  color: #000000;
+  margin-bottom: 6px;
+}
+
+.capsule-sub {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--royal-blue);
+  margin-bottom: 8px;
+}
+
+.capsule-desc {
+  font-size: 14px;
+  color: #4b5563;
+  line-height: 1.55;
+}
+
+/* ==========================================================================
+   SECTION 6: DỰ ÁN / THÀNH TỰU TIÊU BIỂU
+   Matches #SECTION6: 362px wide cards with 298px top rounded image + 96px white box
+   ========================================================================== */
+#SECTION6 {
+  padding: 78px 0;
+  background: #fafbfc;
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+}
+
+.project-card {
+  border-radius: 15px 15px 6px 6px;
+  overflow: hidden;
+  background: #ffffff;
+  box-shadow: var(--card-shadow);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.project-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--card-shadow-hover);
+}
+
+.project-img-box {
+  width: 100%;
+  height: 260px;
+  border-radius: 15px 15px 0 0;
+  background-position: center top;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+.project-year-tag {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  background: var(--royal-blue);
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 13px;
+  padding: 5px 13px;
+  border-radius: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.project-year-tag.yellow {
+  background: var(--accent-yellow);
+  color: #000000;
+}
+
+.project-info-box {
+  padding: 22px 24px;
+  background: #ffffff;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.project-title {
+  font-size: 20px;
+  font-weight: 700;
+  color: #000000;
+  margin-bottom: 6px;
+}
+
+.project-org {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--royal-blue);
+  margin-bottom: 12px;
+}
+
+.project-desc {
+  font-size: 14.5px;
+  color: #4b5563;
+  line-height: 1.6;
+}
+
+/* 4th Achievement Highlight Banner below the 3 cards */
+.achievement-extra-bar {
+  margin-top: 28px;
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 22px 28px;
+  box-shadow: var(--card-shadow);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  border-left: 6px solid var(--accent-yellow);
+}
+
+.achievement-extra-left {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.achievement-trophy {
+  width: 54px;
+  height: 54px;
+  border-radius: 14px;
+  background: var(--accent-yellow);
+  color: #000000;
+  font-size: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+/* ==========================================================================
+   SECTION 7: BẢNG GIÁ -> HÀNH TRÌNH SỰ NGHIỆP & HỌC VẤN
+   Matches #SECTION7: 3 Tier Cards (Grey / Vivid Yellow #ffde59 / Grey Band)
+   + Detailed Interactive Experience Timeline of all 7 Roles
+   ========================================================================== */
+#SECTION7 {
+  padding: 82px 0;
+  background: #ffffff;
+}
+
+.pricing-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+  margin-bottom: 64px;
+}
+
+.tier-card {
+  background: #ffffff;
+  border-radius: 10px;
+  box-shadow: var(--card-shadow);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.tier-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--card-shadow-hover);
+}
+
+.tier-card.featured {
+  transform: translateY(-8px);
+  border: 2px solid var(--accent-yellow);
+}
+
+.tier-card.featured:hover {
+  transform: translateY(-12px);
+}
+
+.tier-header {
+  padding: 26px 20px 20px;
+  text-align: center;
+}
+
+.tier-name {
+  font-size: 22px;
+  font-weight: 700;
+  color: #000000;
+  margin-bottom: 6px;
+}
+
+.tier-period {
+  font-size: 15px;
+  font-weight: 600;
+  color: #4b5563;
+}
+
+.tier-band {
+  height: 136px;
+  background-color: var(--band-grey);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 18px;
+  text-align: center;
+}
+
+.tier-card.featured .tier-band {
+  background-color: var(--accent-yellow);
+}
+
+.tier-big-metric {
+  font-size: 32px;
+  font-weight: 800;
+  color: #000000;
+  line-height: 1.15;
+  margin-bottom: 4px;
+}
+
+.tier-sub-metric {
+  font-size: 15px;
+  font-weight: 700;
+  color: #1f2937;
+}
+
+.tier-body {
+  padding: 26px 24px 30px;
+  text-align: center;
+  font-size: 15.5px;
+  color: #000000;
+  line-height: 1.75;
+  flex: 1;
+}
+
+.tier-body ul li {
+  padding: 6px 0;
+  border-bottom: 1px dashed #e5e7eb;
+}
+
+.tier-body ul li:last-child {
+  border-bottom: none;
+}
+
+/* Detailed 7-Role Career Timeline & Education Grid */
+.career-detail-wrapper {
+  margin-top: 24px;
+  display: grid;
+  grid-template-columns: 1.35fr 0.65fr;
+  gap: 36px;
+  align-items: start;
+}
+
+.timeline-box, .education-box {
+  background: #ffffff;
+  border-radius: 14px;
+  box-shadow: var(--card-shadow);
+  padding: 32px;
+}
+
+.sub-block-title {
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--royal-blue);
+  margin-bottom: 24px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding-bottom: 12px;
+  border-bottom: 2px solid #f1f3f4;
+}
+
+.timeline-list {
+  position: relative;
+  padding-left: 24px;
+  border-left: 3px solid var(--royal-blue);
+  display: flex;
+  flex-direction: column;
+  gap: 26px;
+}
+
+.timeline-item {
+  position: relative;
+}
+
+.timeline-item::before {
+  content: '';
+  position: absolute;
+  left: -32px;
+  top: 4px;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--accent-yellow);
+  border: 3px solid var(--royal-blue);
+}
+
+.timeline-role-head {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 8px;
+  margin-bottom: 4px;
+}
+
+.timeline-role-title {
+  font-size: 17.5px;
+  font-weight: 700;
+  color: #000000;
+}
+
+.timeline-date {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--royal-blue);
+  background: rgba(14, 71, 192, 0.08);
+  padding: 3px 10px;
+  border-radius: 12px;
+}
+
+.timeline-company {
+  font-size: 14.5px;
+  font-weight: 700;
+  color: #1e40af;
+  margin-bottom: 8px;
+}
+
+.timeline-bullets {
+  list-style: disc;
+  padding-left: 18px;
+  font-size: 14px;
+  color: #374151;
+  line-height: 1.6;
+}
+
+.timeline-bullets li {
+  margin-bottom: 5px;
+}
+
+.edu-item {
+  margin-bottom: 20px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid #f1f3f4;
+}
+
+.edu-item:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.edu-item h4 {
+  font-size: 16px;
+  font-weight: 700;
+  color: #000000;
+  margin-bottom: 4px;
+}
+
+.edu-item .edu-school {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--royal-blue);
+  margin-bottom: 6px;
+}
+
+.cert-badge-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 12px;
+}
+
+.cert-badge {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: #f8fafc;
+  padding: 10px 14px;
+  border-radius: 8px;
+  border-left: 3px solid var(--accent-yellow);
+  font-size: 13.5px;
+  font-weight: 600;
+  color: #1f2937;
+}
+
+.skill-meter-group {
+  margin-top: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.skill-meter-label {
+  display: flex;
+  justify-content: space-between;
+  font-size: 13.5px;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.skill-meter-bar {
+  height: 8px;
+  background: #e5e7eb;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.skill-meter-fill {
+  height: 100%;
+  background: var(--btn-gradient);
+  border-radius: 4px;
+}
+
+/* ==========================================================================
+   SECTION 8: CALL-TO-ACTION BANNER
+   Matches #SECTION8 / #BOX22: 1172px wide Royal Blue #0e47c0 Rounded 10px Banner
+   + Vivid Yellow #ffde59 Pill Button (300x50px)
+   ========================================================================== */
+#SECTION8 {
+  padding: 36px 0 64px;
+  background: #ffffff;
+}
+
+.cta-banner-box {
+  background-color: var(--royal-blue);
+  border-radius: 10px;
+  padding: 44px 48px;
+  color: #ffffff;
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  gap: 36px;
+  align-items: center;
+  box-shadow: 0 18px 40px rgba(14, 71, 192, 0.25);
+  position: relative;
+  overflow: hidden;
+}
+
+.cta-banner-left h3 {
+  font-size: 34px;
+  font-weight: 700;
+  line-height: 1.25;
+  margin-bottom: 16px;
+}
+
+.cta-banner-right p {
+  font-size: 16px;
+  line-height: 1.65;
+  color: rgba(255, 255, 255, 0.92);
+  margin-bottom: 24px;
+}
+
+.cta-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  align-items: center;
+}
+
+/* ==========================================================================
+   SECTION 9: FOOTER & GOOGLE MAP
+   Matches #SECTION9: Solid Black #000000 Background, Contact Icons, Map Iframe
+   ========================================================================== */
+#SECTION9 {
+  background-color: #000000;
+  color: #ffffff;
+  padding: 44px 0;
+  min-height: 258px;
+  display: flex;
+  align-items: center;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: center;
+  width: 100%;
+}
+
+.footer-brand {
+  margin-bottom: 22px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.footer-brand .brand-name {
+  color: #ffffff;
+  font-size: 22px;
+}
+
+.footer-brand .brand-role {
+  color: var(--accent-yellow);
+}
+
+.footer-contact-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.footer-contact-row {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  font-size: 16px;
+  color: #ffffff;
+}
+
+.footer-contact-row img {
+  width: 25px;
+  height: 25px;
+  object-fit: contain;
+}
+
+.footer-contact-row a:hover {
+  color: var(--accent-yellow);
+}
+
+.footer-map-frame {
+  width: 100%;
+  height: 215px;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+/* ==========================================================================
+   POPUP 1: MODAL FORM (Exact Salekit #POPUP1 Aesthetic: White Top + Graphic Bottom)
+   ========================================================================== */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.65);
+  backdrop-filter: blur(4px);
+  z-index: 999;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+}
+
+.modal-overlay.active {
+  display: flex;
+}
+
+.popup-card {
+  width: 100%;
+  max-width: 420px;
+  background: #ffffff;
+  border-radius: 8px;
+  overflow: hidden;
+  position: relative;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.35);
+  animation: modalFadeIn 0.25s ease;
+}
+
+@keyframes modalFadeIn {
+  from { opacity: 0; transform: translateY(16px) scale(0.97); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+.popup-close {
+  position: absolute;
+  top: 12px;
+  right: 14px;
+  background: rgba(0, 0, 0, 0.08);
+  border: none;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  font-size: 18px;
+  cursor: pointer;
+  color: #1f2937;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.popup-close:hover {
+  background: var(--royal-blue);
+  color: #ffffff;
+}
+
+.popup-top {
+  padding: 28px 24px 22px;
+  background: #ffffff;
+}
+
+.popup-title {
+  font-size: 22px;
+  font-weight: 800;
+  color: var(--royal-blue);
+  text-align: center;
+  margin-bottom: 6px;
+}
+
+.popup-subtitle {
+  font-size: 13.5px;
+  color: #4b5563;
+  text-align: center;
+  margin-bottom: 18px;
+}
+
+.popup-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.popup-form input,
+.popup-form textarea {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid #d1d5db;
+  border-radius: 4px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 14px;
+  outline: none;
+  transition: border-color 0.2s ease;
+}
+
+.popup-form input:focus,
+.popup-form textarea:focus {
+  border-color: var(--royal-blue);
+}
+
+.popup-submit-btn {
+  width: 100%;
+  height: 48px;
+  background: rgb(12, 97, 242);
+  color: #ffffff;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 17px;
+  font-weight: 700;
+  border: none;
+  cursor: pointer;
+  text-transform: uppercase;
+  transition: background 0.2s ease;
+}
+
+.popup-submit-btn:hover {
+  background: var(--royal-blue);
+}
+
+.popup-bottom-graphic {
+  height: 170px;
+  background-image: url('assets/cta-graphic.png');
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  padding: 16px;
+}
+
+.popup-bottom-graphic::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(0,0,0,0.1) 0%, rgba(14,71,192,0.85) 100%);
+}
+
+.popup-direct-info {
+  position: relative;
+  z-index: 2;
+  color: #ffffff;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+/* ==========================================================================
+   RESPONSIVE BREAKPOINTS (Mobile & Tablet)
+   ========================================================================== */
+@media (max-width: 992px) {
+  .hero-grid,
+  .about-grid,
+  .services-top-grid,
+  .career-detail-wrapper,
+  .cta-banner-box,
+  .footer-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .process-grid,
+  .capsules-grid,
+  .projects-grid,
+  .pricing-cards-grid {
+    grid-template-columns: 1fr;
+    max-width: 460px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .tier-card.featured {
+    transform: none;
+  }
+
+  .hero-content {
+    padding: 24px;
+  }
+
+  .badge-top-left {
+    left: -10px;
+  }
+  .badge-bottom-right {
+    right: -10px;
+  }
+}
+
+@media (max-width: 760px) {
+  .nav-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: #ffffff;
+    flex-direction: column;
+    padding: 20px;
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12);
+    gap: 16px;
+  }
+
+  .nav-menu.open {
+    display: flex;
+  }
+
+  .mobile-menu-btn {
+    display: block;
+  }
+
+  .hero-title {
+    font-size: 32px;
+  }
+
+  .hero-title .line-black {
+    font-size: 26px;
+  }
+
+  .section-title {
+    font-size: 28px;
+  }
+
+  .capability-checklist {
+    grid-template-columns: 1fr;
+  }
+
+  .achievement-extra-bar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .cta-banner-box {
+    padding: 32px 24px;
+  }
+
+  .cta-banner-left h3 {
+    font-size: 26px;
+  }
+}
