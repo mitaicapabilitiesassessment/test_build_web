@@ -321,7 +321,7 @@ img {
 #SECTION2 {
   min-height: 610px;
   position: relative;
-  background-image: url('assets/bg-section-01.jpg');
+  background-image: url('bg-section-01.jpg');
   background-position: center top;
   background-repeat: no-repeat;
   background-size: cover;
@@ -652,7 +652,7 @@ img {
   width: 100%;
   max-width: 419px;
   height: 434px;
-  background-image: url('assets/bg-top.png');
+  background-image: url('bg-top.png');
   background-position: center top;
   background-repeat: no-repeat;
   background-size: cover;
@@ -1491,7 +1491,7 @@ img {
 
 .popup-bottom-graphic {
   height: 170px;
-  background-image: url('assets/cta-graphic.png');
+  background-image: url('cta-graphic.png');
   background-size: cover;
   background-position: center;
   position: relative;
